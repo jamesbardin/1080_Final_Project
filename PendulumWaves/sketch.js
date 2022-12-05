@@ -8,13 +8,13 @@ let notes = [];
 
 let spacing = 8;
 let gravity = 9.8;
-let periodmax = 700;
-let numcycles = 10;
-let modifier = 1;
+let periodmax = 500;
+let numcycles = 30;
+let modifier = 0.12;
 
 // equation to populate len is from https://www.education.com/science-fair/article/pendulum-waves/
 let len = [];
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 60; i++) {
   l = (gravity * (Math.pow((periodmax/(2*Math.PI*(numcycles+i+1))),2)))/modifier
   len.push(l);
 }
@@ -44,10 +44,10 @@ function addSlider(variable, min, max, val, step, text) {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);  
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 60; i++) {
     notes.push(midi - 2*i)
   }
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 60; i++) {
     pendulums.push(new Pendulum(len[i]));
    
     env.push(new p5.Envelope())

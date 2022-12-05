@@ -4,17 +4,17 @@ class Pendulum {
     this.origin = createVector(width / 2, 0)
     this.len = l;
     this.angle = PI / 4;
-    this.angleV = 0.03;
+    this.angleV = 0.0;
     this.angleA = 0.01;
     this.gravity = 0.5;
-    this.size = 12;
+    this.size = 6;
     this.c = "#000000";
     this.colormod1 = 0;
     this.colormod2 = 255;
     this.colormod3 = 255;
-    this.fill = fill('rgba(' + this.colormod1 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)');
+    // this.fill = fill('rgba(' + this.colormod1 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)');
+    this.fill = fill(0, 100, 100)
   }
-
 
   display() {
     stroke(this.c)
@@ -22,6 +22,7 @@ class Pendulum {
     line(this.origin.x, this.origin.y, this.bob.x, this.bob.y)
     strokeWeight(1);
     circle(this.bob.x, this.bob.y, this.size)
+    fill(360,100,100)
   }
 
   update() {
@@ -36,7 +37,7 @@ class Pendulum {
   
   played() {
     this.c = "#ff0000";
-    this.fill = fill('rgba(' + 255 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)');
+    // this.fill = fill('rgba(' + 255 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)');
 
     // attempt at making colors slowly change, issues is it updates ALL self attr. 
     // if (this.colormod1 < 240) {
@@ -64,6 +65,7 @@ class Pendulum {
   
   notPlayed() {
     this.c = "#000000";
-    this.fill = fill('rgba(' + this.colormod1 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)'); 
+    // this.fill = fill('rgba(' + this.colormod1 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)'); 
+    // this.fill = fill('green')
   }
 }
