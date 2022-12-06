@@ -6,7 +6,7 @@ class Pendulum {
     this.angle = PI / 4;
     this.angleV = 0.0;
     this.angleA = 0.01;
-    this.gravity = 0.5;
+    this.gravity = 1;
     this.size = 6;
     this.c = "#000000";
     this.colormod1 = 0;
@@ -39,7 +39,7 @@ class Pendulum {
   
   played() {
     this.c = "#ff0000";
-    
+
     if (this.m < 10){
       this.up = true;
     }
