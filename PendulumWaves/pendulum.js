@@ -13,7 +13,9 @@ class Pendulum {
     this.colormod2 = 255;
     this.colormod3 = 255;
     // this.fill = fill('rgba(' + this.colormod1 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)');
-    this.fill = fill(0, 100, 100)
+    this.fill = fill(0, 100, 100);
+    this.m = 360;
+    this.up = false;
   }
 
   display() {
@@ -22,7 +24,7 @@ class Pendulum {
     line(this.origin.x, this.origin.y, this.bob.x, this.bob.y)
     strokeWeight(1);
     circle(this.bob.x, this.bob.y, this.size)
-    fill(360,100,100)
+    fill(this.m,100,255)
   }
 
   update() {
@@ -37,30 +39,19 @@ class Pendulum {
   
   played() {
     this.c = "#ff0000";
-    // this.fill = fill('rgba(' + 255 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)');
-
-    // attempt at making colors slowly change, issues is it updates ALL self attr. 
-    // if (this.colormod1 < 240) {
-    //   this.colormod1 += 5;
-    // }
-    // else {
-    //   this.colormod1 -= 5;
-    // }
-    // if (this.colormod2 < 240) {
-    //   this.colormod2 += 9;
-    // }
-    // else {
-    //   this.colormod2 -= 9;
-    // }
-    // if (this.colormod3 < 230) {
-    //   this.colormod3 += 16;
-    // }
-    // else {
-    //   this.colormod3 -= 16;
-    // }
-    // // this.updateColor()
-    // this.fill = fill('rgba(' + this.colormod1 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)');
     
+    if (this.m < 10){
+      this.up = true;
+    }
+    else if (this.m > 340) {
+      this.up = false;
+    }
+    if (this.m > -10 && this.up == false){
+      this.m -= 10;
+    }
+    if (this.m < 370 && this.up == true){
+      this.m += 10;
+    }    
   }
   
   notPlayed() {
