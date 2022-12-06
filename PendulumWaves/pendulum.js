@@ -51,7 +51,7 @@ class Pendulum {
     if (this.m > -10 && this.up_m == false){
       this.m -= 10;
     }
-    if (this.m < 370 && this.up_m == true){
+    else if (this.m < 370 && this.up_m == true){
       this.m += 10;
     }    
 
@@ -64,7 +64,7 @@ class Pendulum {
     if (this.m2 > -10 && this.up_m2 == false){
       this.m2 -= 15;
     }
-    if (this.m2 < 370 && this.up_m2 == true){
+    else if (this.m2 < 370 && this.up_m2 == true){
       this.m2 += 20;
     }  
   }

@@ -53,7 +53,8 @@ function setup() {
     osc[i].start();
     osc[i].freq(midiToFreq(notes[i]))
     osc[i].amp(env[i]);
-
+    // fix for mystery color-changing pendulum
+    pendulums[0].size = 0;
   }
 }
 
@@ -64,7 +65,7 @@ function draw() {
     pendulums[i].display();
     pendulums[i].update();
     
-    if(Math.abs(pendulums[i].bob.x - width/2) < 7) {
+    if(Math.abs(pendulums[i].bob.x - width/2) < 8) {
       env[i].play();
       pendulums[i].played();
       // pendulums[i].incrementColor();
