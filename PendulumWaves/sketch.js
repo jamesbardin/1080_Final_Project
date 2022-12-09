@@ -40,13 +40,19 @@ function addSlider(variable, min, max, val, step, text) {
 function setup() {
   createCanvas(windowWidth, windowHeight);  
   for (let i = 0; i < 60; i++) {
-    notes.push(midi - i)
+    if (i % 2 == 0){
+      notes.push(midi - i)
+    }
+    else {
+      notes.push(0)
+    }
+    // assigns note to every other pendulum
   }
   for (let i = 0; i < 60; i++) {
     pendulums.push(new Pendulum(len[i]));
    
     env.push(new p5.Envelope())
-    env[i].setADSR(0.01, 0.01, 1, 0.75);
+    env[i].setADSR(0.001, 0.01, 1, 0.3);
     env[i].setRange(1, 0);
        
     osc.push(new p5.Oscillator());

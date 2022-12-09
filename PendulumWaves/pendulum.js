@@ -4,7 +4,7 @@ class Pendulum {
     this.origin = createVector(width / 2, 0)
     this.len = l;
     this.angle = PI / 3;
-    this.angleV = 0.0;
+    this.angleV = 0;
     this.angleA = 0.01;
     this.gravity = 1;
     this.size = 26;
