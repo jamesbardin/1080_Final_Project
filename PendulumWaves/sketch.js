@@ -7,18 +7,17 @@ let periodmax = 600;
 let numcycles = 60;
 let modifier = 0.035;
 
+let midi = 100;
+
+let osc = [];
+let env = [];
+
 // equation to populate len is from https://www.education.com/science-fair/article/pendulum-waves/
 let len = [];
 for (let i = 0; i < 60; i++) {
   l = (gravity * (Math.pow((periodmax/(2*Math.PI*(numcycles+i+1))),2)))/modifier
   len.push(l);
 }
-
-let midi = 100;
-
-
-let osc = [];
-let env = [];
 
 function addSlider(variable, min, max, val, step, text) {
   let slider = createSlider(min, max, val, step);
