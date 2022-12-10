@@ -9,11 +9,6 @@ class Pendulum {
     this.gravity = 1;
     this.size = 26;
     this.c = "#000000";
-    // this.colormod1 = 0;
-    // this.colormod2 = 255;
-    // this.colormod3 = 255;
-    // // this.fill = fill('rgba(' + this.colormod1 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)');
-    // this.fill = fill(0, 200, 100);
     this.m = 60;
     this.m2 = 100;
     this.up_m = false;
