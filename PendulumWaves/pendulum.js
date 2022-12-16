@@ -60,12 +60,12 @@ class Pendulum {
       this.m2 -= 15;
     }
     else if (this.m2 < 370 && this.up_m2 == true){
-      this.m2 += 20;
+      this.m2 += 15;
     }  
   }
   
   notPlayed() {
-    this.c = "#000000";
+    this.c = "#36454F";
     // this.fill = fill('rgba(' + this.colormod1 + ',' + this.colormod3 + ',' + this.colormod2 + ', 0.75)'); 
     // this.fill = fill('green')
   }
